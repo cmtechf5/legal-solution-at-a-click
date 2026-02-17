@@ -6,7 +6,7 @@ services:
     name: legal-solution-at-a-click
     env: static
     buildCommand: npm install && npm run build
-    staticPublishPath: ./dist
+    staticPublishPath: ./build
     pullRequestPreviewsEnabled: false
     # Add redirect rule for SPA routing
     routes:
