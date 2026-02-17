@@ -1,0 +1,15 @@
+# Render Blueprint for Static Site Deployment
+# This file is optional but helps with automated deployment configuration
+
+services:
+  - type: web
+    name: legal-solution-at-a-click
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    pullRequestPreviewsEnabled: false
+    # Add redirect rule for SPA routing
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
